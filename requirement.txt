@@ -4,3 +4,5 @@ tzdata==2022.1
 djangorestframework
 markdown
 django-filter
+
+django-role-permissions
