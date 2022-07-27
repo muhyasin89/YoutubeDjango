@@ -25,7 +25,8 @@ SECRET_KEY = 'django-insecure-tc3uir2y0a$h1kv@2)+badhiukl#bf%ghj85ydp7p6g1u@8w_i
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
+CORS_ALLOWED_ORIGINS = []
 
 
 # Application definition
@@ -38,8 +39,11 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rolepermissions',
-    'api',
+    
     'rest_framework',
+    'rest_framework_swagger',
+    'corsheaders',
+    'api',
 ]
 
 MIDDLEWARE = [
@@ -50,6 +54,8 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
+    'django.middleware.common.CommonMiddleware',
 ]
 
 ROOT_URLCONF = 'django_project.urls'
@@ -129,6 +135,8 @@ REST_FRAMEWORK = {
     # Use Django's standard `django.contrib.auth` permissions,
     # or allow read-only access for unauthenticated users.
     'DEFAULT_PERMISSION_CLASSES': [
-        'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly'
-    ]
+        'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly',
+        
+    ],
+    'DEFAULT_SCHEMA_CLASS': 'rest_framework.schemas.coreapi.AutoSchema'
 }
