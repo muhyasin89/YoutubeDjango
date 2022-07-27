@@ -6,5 +6,6 @@ markdown
 django-filter
 
 django-role-permissions
-django-rest-swagger
 django-cors-headers
+drf-yasg
+djoser
