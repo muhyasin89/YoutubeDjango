@@ -5,6 +5,7 @@ djangorestframework
 markdown
 django-filter
 
+djangorestframework-simplejwt
 django-role-permissions
 django-cors-headers
 drf-yasg
