@@ -43,7 +43,6 @@ INSTALLED_APPS = [
     'rest_framework',
     'rest_framework.authtoken',
     'corsheaders',
-    'djoser',
     'api',
 ]
 
@@ -60,6 +59,9 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'django_project.urls'
+
+CORS_ALLOWED_ORIGINS= ["http://localhost:3000"]
+CORS_ORIGIN_ALLOW_ALL = True
 
 TEMPLATES = [
     {
