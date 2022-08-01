@@ -1,6 +1,8 @@
 Django==4.0.5
 sqlparse==0.4.2
 tzdata==2022.1
-djangorestframework
-markdown
-django-filter
+
+djangorestframework=3.13.3
+markdown=3.4.1
+django-filter=22.1
+
