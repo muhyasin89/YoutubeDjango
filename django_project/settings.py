@@ -49,8 +49,7 @@ INSTALLED_APPS = [
     'apps.rent_history',
     'apps.task_librarian',
     'apps.task_librarian_detail',
-    'apps.task_report',
-    'apps.users'
+    'apps.task_report'
 ]
 
 MIDDLEWARE = [
