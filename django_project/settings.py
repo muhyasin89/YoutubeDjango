@@ -44,7 +44,12 @@ INSTALLED_APPS = [
     'rest_framework.authtoken',
     'corsheaders',
     'api',
-    'apps.book'
+    'apps.book',
+    'apps.author',
+    'apps.rent_history',
+    'apps.task_librarian',
+    'apps.task_librarian_detail',
+    'apps.task_report',
 ]
 
 MIDDLEWARE = [
