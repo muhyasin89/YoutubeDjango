@@ -13,7 +13,7 @@ from model_utils.models import TimeStampedModel #for created and updated
 class TaskLibrarian(TimeStampedModel):
     name = CharField( _("Name"), max_length=255)
     description = TextField(_("Description"))
-    author = ManyToManyField(TaskLibrarianDetail)
+    task_detail = ManyToManyField(TaskLibrarianDetail)
     report = ManyToManyField(TaskReport)
 
     class Meta:
