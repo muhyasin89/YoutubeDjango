@@ -49,7 +49,7 @@ INSTALLED_APPS = [
     'apps.rent_history',
     'apps.task_librarian',
     'apps.task_librarian_detail',
-    'apps.task_report'
+    'apps.task_report',
 ]
 
 MIDDLEWARE = [
@@ -154,7 +154,5 @@ REST_FRAMEWORK = {
     'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
     'PAGE_SIZE': 10
 }
-
-
 
 
