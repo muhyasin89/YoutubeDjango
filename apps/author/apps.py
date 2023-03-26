@@ -7,5 +7,7 @@ class AuthorConfig(AppConfig):
     verbose_name= _("Author")
 
     def ready(self) -> None:
-        # kalau ingin nambah signal
-        return super().ready()
+        try:
+            import apps.author.apps  # noqa F401
+        except ImportError:
+            pass

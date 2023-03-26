@@ -7,5 +7,7 @@ class RentHistoryConfig(AppConfig):
     verbose_name= _("Rent Histories")
 
     def ready(self) -> None:
-        # kalau ingin nambah signal
-        return super().ready()
+        try:
+            import apps.rent_history.apps  # noqa F401
+        except ImportError:
+            pass

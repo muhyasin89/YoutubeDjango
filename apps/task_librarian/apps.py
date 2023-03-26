@@ -7,5 +7,7 @@ class TaskLibraryConfig(AppConfig):
     verbose_name= _("Task Librarians")
 
     def ready(self) -> None:
-        # kalau ingin nambah signal
-        return super().ready()
+        try:
+            import apps.task_librarian.apps  # noqa F401
+        except ImportError:
+            pass

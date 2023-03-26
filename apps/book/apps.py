@@ -7,5 +7,7 @@ class BookConfig(AppConfig):
     verbose_name= _("Books")
 
     def ready(self) -> None:
-        # kalau ingin nambah signal
-        return super().ready()
+        try:
+            import apps.book.apps  # noqa F401
+        except ImportError:
+            pass

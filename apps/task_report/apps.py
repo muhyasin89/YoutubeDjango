@@ -7,5 +7,7 @@ class TaskReportConfig(AppConfig):
     verbose_name= _("Task Report")
 
     def ready(self) -> None:
-        # kalau ingin nambah signal
-        return super().ready()
+        try:
+            import apps.task_report.apps  # noqa F401
+        except ImportError:
+            pass

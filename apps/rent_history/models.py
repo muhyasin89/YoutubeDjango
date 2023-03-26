@@ -21,3 +21,7 @@ class RentHistory(TimeStampedModel):
     date_borrow = DateField()
     date_return = DateField()
     description = TextField(_("Description"))
+
+    class Meta:
+        db_table="rent_history"
+        verbose_name= _("Rent History")
