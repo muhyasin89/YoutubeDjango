@@ -1,20 +1,30 @@
 
 from django.utils.translation import gettext_lazy as _
 from django.db.models import (
-    DateField,
-    TextField,
     ForeignKey,
+    CharField,
     CASCADE
 )
 
-
-from apps.book.models import Book
-
 from django.contrib.auth.models import User
 
-from model_utils.models import TimeStampedModel #for created and updated
+from model_utils.models import TimeStampedModel
+
+from apps.enum.change_log import ActivityType, SectionType #for created and updated
 
 class ChangeLog(TimeStampedModel):
+    section_status = CharField(
+        max_length=50,
+        choices=SectionType.choices,
+        default=SectionType.Other,
+    )
+     
+    activity_status = CharField(
+        max_length=50,
+        choices=ActivityType.choices,
+        default=ActivityType.Other,
+    )
+
     created_by = ForeignKey(User, related_name='created_by', on_delete=CASCADE)
 
     class Meta:

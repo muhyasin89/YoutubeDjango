@@ -5,6 +5,7 @@ from django.db.models import (
     TextField,
     ManyToManyField
 )
+from apps.enum.active import ActiveType
 from apps.task_librarian_detail.models import TaskLibrarianDetail
 from apps.task_report.models import TaskReport
 
@@ -15,6 +16,12 @@ class TaskLibrarian(TimeStampedModel):
     description = TextField(_("Description"))
     task_detail = ManyToManyField(TaskLibrarianDetail)
     report = ManyToManyField(TaskReport)
+
+    ActiveType = CharField(
+        max_length=50,
+        choices=ActiveType.choices,
+        default=ActiveType.Active,
+    )
 
     class Meta:
         db_table="task_librarian"
