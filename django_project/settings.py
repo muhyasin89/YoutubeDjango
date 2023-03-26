@@ -50,6 +50,7 @@ INSTALLED_APPS = [
     'apps.task_librarian',
     'apps.task_librarian_detail',
     'apps.task_report',
+    'apps.change_log'
 ]
 
 MIDDLEWARE = [
